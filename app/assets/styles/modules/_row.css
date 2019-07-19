@@ -1,0 +1,53 @@
+.row{
+    
+ &__b-margin-until-medium {
+    margin-bottom: 1rem;
+    }
+   
+    /*wydłużam row o 65px z prawej strony, robię to po to aby wyrównać długość  kolumny -&__8, póżniej do .wrappera - rodzica - row dodaje overflow: hidden; abu schować wystający margin.
+*/
+    &--gutters {
+    margin-right: -65px;
+    }
+    
+    &--gutters > div{
+    padding-right: 65px;
+    }
+    
+&::after {
+    content: '';
+    clear: both;
+    display: table;
+    }
+    
+    
+@media (min-width:800px) {
+/*powód dlaczego nie zmieniłam medium-4, medium-8 od razu na 37,63% jest taki że póżniej w kodzie wykorzystam tą klasę - &__medium-4*/
+  &__medium-4{
+    float: left;
+    width: 33.33%;
+    }
+    
+    &__medium-4--larger{
+      width: 37%;
+    }
+    
+      &__medium-8{
+    float: left;
+    width: 66.66%;
+    }  
+    
+    &__medium-8--smaller{
+    width: 63%;
+    }
+    
+ &__b-margin-until-medium {
+    margin-bottom: 0;
+    }
+}
+    
+ 
+
+  
+}
+
