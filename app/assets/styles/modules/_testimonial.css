@@ -1,0 +1,49 @@
+.testimonial{
+/*aby padding z <p> nie wystawał poza diva-rodzica do dodaje się minimanly padding na dole, wtedy, paragraf zostanie wliczny do rodzica.*/
+background-color: rgba(255,255,255,.8);
+padding: 0 18px 1px 18px; 
+margin-bottom: 98px;
+	
+&--last{
+margin-bottom: 0;		
+}
+	
+@media (min-width:1010px){
+padding: 0 1.8125rem 1px 1.8125rem;
+margin-bottom: 0;
+}
+/*aby div miał zaokrąglone rogi należy do niego dodać overflow hidden, wtedy nie przykryje go zdjęcie i zaokrąglenia będą widoczne
+
+aby div przypominał koło w border-radius wpisuje połowę jego długości
+    
+margin-bottom: -80px; - spowoduje że zostanie usunięty odstęp pod zdjęciem spowodowany przesunięciem z top: -80px;
+*/   
+&__photo{
+border-radius: 80px;
+overflow:hidden;
+width: 160px;
+height: 160px;  
+margin: 0 auto;
+margin-bottom: -80px;
+position: relative;
+top: -80px;
+border: 6px solid rgba(255,255,255,.8);
+}
+    
+&__title{
+ color: $mainBlue;
+text-align: center;
+font-size: 1.5rem;
+font-weight: 500;
+margin: 0;
+}
+    
+&__subtitle{
+ color: $mainOrange;
+text-align: center;
+font-weight: 400;
+font-size: 0.9375rem;
+margin: .25rem 0 1rem 0;
+}
+
+}
