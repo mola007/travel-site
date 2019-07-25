@@ -1401,3 +1401,17 @@ transition: background-color .3s ease-out;
 		background-color: transparent
 	}
 		}
+
+.reveal-item{
+ opacity: 0; 
+-webkit-transform: scale(0.8); 
+        transform: scale(0.8);
+-webkit-transition: all .5s ease-out;
+transition: all .5s ease-out;
+}
+
+.reveal-item--is-visible{
+    -webkit-transform: scale(1);
+            transform: scale(1);
+   opacity: 1;  
+    }
