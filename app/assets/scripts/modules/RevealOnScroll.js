@@ -1,6 +1,6 @@
 import $ from 'jquery';
 /* w projekcie wykorzystano bibliotekę waypoints, za pomocą której elementy pojawiają się/znikają podczas scrollowania, zaczynam od instalacji */
-import waypionts from '../../../../node_modules/waypoints/lib/noframework.waypoints';
+import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
 
 
 class RevealOnScroll {

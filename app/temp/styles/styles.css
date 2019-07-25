@@ -1175,10 +1175,15 @@ transition: background-color .3s ease-out;
 @media (min-width:800px){
 
 .site-header{
-	background-color: rgba(47,85,114, .3)
+	
+	background-color: rgba(47,85,114, .3);position: fixed
 
 
-}	
+}
+	
+	.site-header--dark{
+	background-color: rgba(23,51,72, .85);
+	}
 	}
 
 @media (min-width:800px){
@@ -1196,6 +1201,10 @@ transition: background-color .3s ease-out;
 	left: 50%;
 	-webkit-transform: translateX(-50%) scale(.8);
 	        transform: translateX(-50%) scale(.8);
+	-webkit-transition: -webkit-transform .3s ease-out;
+	transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 	-webkit-transform-origin: 50% 0;
 	        transform-origin: 50% 0;
 	background-color: #2f5572;
@@ -1208,7 +1217,12 @@ transition: background-color .3s ease-out;
 		left: auto;
 		-webkit-transform: translateX(0);
 		        transform: translateX(0)
+		/* ten zapis selektora pozwala złapać selektor logo tylko momencie kiedy dodana jest klasa z dark, dziwne i nie do końca rozumiem */
 	}
+		.site-header--dark .site-header__logo {
+		-webkit-transform: scale(.57);
+		        transform: scale(.57);
+		}
 		}
 
 .site-header__logo__graphic{
@@ -1400,6 +1414,10 @@ transition: background-color .3s ease-out;
 		padding: 12px 0;
 		background-color: transparent
 	}
+
+		.primary-nav a.is-current-link {
+		color: #fabb69;
+		}
 		}
 
 .reveal-item{
