@@ -4,6 +4,8 @@ import smoothScroll from 'jquery-smooth-scroll';
 
 class StickyHeader {
 constructor(){
+this.lazyImages = $('.lazyload');
+
 this.siteHeader = $('.site-header');
 this.headerTriggerElement = $('.large-hero__title');
 this.createHeaderWaypoint();
@@ -14,6 +16,14 @@ this.headerLinks = $('.primary-nav a');
 this.createPageSectionWaypoints();
 /* płynne skrolowanie do sekcji po kliknięciu w link */
 this.addSmoothScrolling();
+
+this.refreshWaypoints();
+}
+
+refreshWaypoints(){
+this.lazyImages.on('load', function(){
+Waypoint.refreshAll();
+})
 }
 
 

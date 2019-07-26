@@ -11282,6 +11282,8 @@ var StickyHeader = function () {
     function StickyHeader() {
         _classCallCheck(this, StickyHeader);
 
+        this.lazyImages = (0, _jquery2.default)('.lazyload');
+
         this.siteHeader = (0, _jquery2.default)('.site-header');
         this.headerTriggerElement = (0, _jquery2.default)('.large-hero__title');
         this.createHeaderWaypoint();
@@ -11292,12 +11294,21 @@ var StickyHeader = function () {
         this.createPageSectionWaypoints();
         /* płynne skrolowanie do sekcji po kliknięciu w link */
         this.addSmoothScrolling();
+
+        this.refreshWaypoints();
     }
 
-    /* płynne skrolowanie, zaczynam od zainstalowania npm install jquery-smooth-scroll --save, póżniej dodaje  wtyczkę na górze(import) i wywołuje metodę w construktorze */
-
-
     _createClass(StickyHeader, [{
+        key: 'refreshWaypoints',
+        value: function refreshWaypoints() {
+            this.lazyImages.on('load', function () {
+                Waypoint.refreshAll();
+            });
+        }
+
+        /* płynne skrolowanie, zaczynam od zainstalowania npm install jquery-smooth-scroll --save, póżniej dodaje  wtyczkę na górze(import) i wywołuje metodę w construktorze */
+
+    }, {
         key: 'addSmoothScrolling',
         value: function addSmoothScrolling() {
             this.headerLinks.smoothScroll();
